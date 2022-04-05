@@ -1,0 +1,28 @@
+<h1>Page de recherche</h1>
+
+
+
+<form action="search_product_dop" method="post">
+
+    {% csrf_token %}
+    <input type="date" name="DOP" id="DOP">
+
+    <button type="submit">
+        Search
+    </button>
+
+    {% if result2 %}
+        <form action="update" method="post">
+
+        </form>
+        <p>
+           Le produit qui est concerné par la date de peremption saisie est : 
+           <b>{{ result2.name }}</b>
+        </p>
+    {% else %}
+        <p>
+            Aucun produit trouvé...
+        </p>
+    {% endif %}
+    
+</form>

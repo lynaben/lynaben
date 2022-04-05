@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<br>
+<div>
+<h1 style="text-align: center;">Les produits disponibles : </h2>
+<ul>
+{% for n in produits %}
+    <li style="padding-left: 2rem;background-position: 0 0; background-size: 1.6rem 1.6rem;background-repeat: no-repeat;">Nom Du Produit : <b> {{ n.name }} </b>, Date De Peremption : <b>{{n.DOP}}</b></li>
+    <a href={% url 'update_dop' n.GTIN %} class = "btn btn-success" >Update</a>
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}
+

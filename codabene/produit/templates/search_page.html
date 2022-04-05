@@ -1,0 +1,27 @@
+<h1>Recherche la date de peremption d'un produit avec son GTIN</h1>
+
+
+
+<form action="search" method="post">
+
+    {% csrf_token %}
+    <input type="number" name="GTIN" id="GTIN">
+
+    <button type="submit">
+        Search
+    </button>
+
+    {% if result %}
+        <form action="update" method="post">
+
+        </form>
+        <p>
+           Le GTIN saisi a pour produit <b>{{ result.name }} </b>avec la date de peremption suivante : <b>{{ result.DOP }}</b>
+        </p>
+    {% else %}
+        <p>
+            Aucun produit a pour GTIN le code entré... Veuillez réessayer avec un GTIN valide
+        </p>
+    {% endif %}
+    
+</form>

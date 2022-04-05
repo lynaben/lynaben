@@ -1,0 +1,11 @@
+<body>
+<h2 style = "text-align : center">Veuillez remplir les champs ci dessous pour ajouter un nouveau produit :</h2>
+<br>
+<form method="POST" class = "post-form" >
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button  type ="submit" class="save btn">
+    Enregistrer
+  </button>
+</form>
+</body>
